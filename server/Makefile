@@ -1,24 +1,16 @@
-TARGET = prog
-LIBS = -lbluetooth -lpthread
+HEADERS =
+OBJECTS = program.o
 CC = gcc
-CFLAGS = -g -Wall
+CFLAGS = -lbluetooth -lpthread
 
-.PHONY: default all clean
-
-default: $(TARGET)
-all: default
-
-OBJECTS = $(patsubst %.c, %.o, $(wildcard *.c))
-HEADERS = $(wildcard *.h)
+default: program
 
 %.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) -c $< -o $@
+    $(CC) $(CFLAGS) -c $< -o $@
 
-.PRECIOUS: $(TARGET) $(OBJECTS)
-
-$(TARGET): $(OBJECTS)
-	$(CC) $(OBJECTS) -Wall $(LIBS) -o $@
+program: $(OBJECTS)
+    $(CC) $(CFLAGS) $(OBJECTS) -o $@
 
 clean:
-	-rm -f *.o
-	-rm -f $(TARGET)
+    -rm -f $(OBJECTS)
+    -rm -f program
