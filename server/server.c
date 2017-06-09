@@ -12,12 +12,12 @@
 #define QUEUE 1
 
 void *magic(void *x_void_ptr) {
-  for(;;) {
-    printf("ON\n");
-    sleep(s);
-    printf("OFF\n");
-    sleep(s);
-  }
+  // for(;;) {
+  //   printf("ON\n");
+  //   sleep(s);
+  //   printf("OFF\n");
+  //   sleep(s);
+  // }
 }
 
 int main(void)
