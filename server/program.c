@@ -61,7 +61,7 @@ int main(void)
       while((bytes_read = read(client, buf, sizeof(buf))) > 0) {
         printf("%i", bytes_read);
         printf("received [%s]\n", buf);
-        sscanf(buf, "%d", &s);
+        sscanf(buf, "%d", &delay);
       }
       close(client);
     }
