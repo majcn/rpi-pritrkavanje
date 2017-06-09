@@ -1,16 +1,15 @@
-HEADERS =
-OBJECTS = program.o
 CC = gcc
 CFLAGS = -lbluetooth -lpthread
+LIBS =
 
 default: program
 
-%.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) -c $< -o $@
+program.o: program.c
+	$(CC) $(CFLAGS) -c program.c -o program.o
 
-program: $(OBJECTS)
-	$(CC) $(CFLAGS) $(OBJECTS) -o $@
+program: program.o
+	$(CC) $(LIBS) program.o -o program
 
 clean:
-	-rm -f $(OBJECTS)
+	-rm -f program.o
 	-rm -f program
