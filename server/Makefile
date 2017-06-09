@@ -1,6 +1,6 @@
 CC = gcc
-CFLAGS = -lbluetooth -lpthread
-LIBS =
+CFLAGS =
+LIBS = -lbluetooth -lpthread
 
 default: program
 
