@@ -6,11 +6,11 @@ CFLAGS = -lbluetooth -lpthread
 default: program
 
 %.o: %.c $(HEADERS)
-    $(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 program: $(OBJECTS)
-    $(CC) $(CFLAGS) $(OBJECTS) -o $@
+	$(CC) $(CFLAGS) $(OBJECTS) -o $@
 
 clean:
-    -rm -f $(OBJECTS)
-    -rm -f program
+	-rm -f $(OBJECTS)
+	-rm -f program
