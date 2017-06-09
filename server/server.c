@@ -22,8 +22,10 @@ void *magic(void *x_void_ptr) {
 
 int main(void)
 {
+  int delay = 0;
+
   pthread_t magic_thread;
-  if(pthread_create(&magic_thread, NULL, NULL, NULL)) {
+  if(pthread_create(&magic_thread, NULL, magic, &delay)) {
     fprintf(stderr, "Error creating thread\n");
     return 1;
   }
