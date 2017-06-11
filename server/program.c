@@ -1,3 +1,5 @@
+#include <stdlib.h> // exit
+
 #include "bimbambom.h"
 
 #include <unistd.h>
@@ -23,8 +25,8 @@ int main(void)
 
   pthread_t magic_thread;
   if(pthread_create(&magic_thread, NULL, magic, &bpm)) {
-    fprintf(stderr, "Error creating thread\n");
-    return 1;
+      perror("thread");
+      exit(1);
   }
 
   int sock, client, alen;

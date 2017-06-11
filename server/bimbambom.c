@@ -1,3 +1,4 @@
+#include <stdio.h>  // printf
 #include <unistd.h> // usleep
 
 void turnOn()
