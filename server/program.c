@@ -1,3 +1,5 @@
+#include "bimbambom.h"
+
 #include <unistd.h>
 
 #include <sys/types.h>
@@ -12,22 +14,15 @@
 #define QUEUE 1
 
 void *magic(void *x_void_ptr) {
-  int *s_ptr = (int *)x_void_ptr;
-
-  for(;;) {
-    printf("ON\n");
-    usleep((*s_ptr));
-    printf("OFF\n");
-    usleep((*s_ptr));
-  }
+  bimbambom((int *)x_void_ptr);
 }
 
 int main(void)
 {
-  int delay = 500;
+  int bpm = 100;
 
   pthread_t magic_thread;
-  if(pthread_create(&magic_thread, NULL, magic, &delay)) {
+  if(pthread_create(&magic_thread, NULL, magic, &bpm)) {
     fprintf(stderr, "Error creating thread\n");
     return 1;
   }
@@ -63,7 +58,7 @@ int main(void)
       while((bytes_read = read(client, buf, sizeof(buf))) > 0) {
         printf("%i", bytes_read);
         printf("received [%s]\n", buf);
-        sscanf(buf, "%d", &delay);
+        sscanf(buf, "%d", &bpm);
       }
       close(client);
     }
