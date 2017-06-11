@@ -1,5 +1,5 @@
-#include <netinet/in.h>
-#include <arpa/inet.h>
+#include <unistd.h>
+
 #include <sys/types.h>
 #include <sys/socket.h>
 
@@ -12,17 +12,19 @@
 #define QUEUE 1
 
 void *magic(void *x_void_ptr) {
-  // for(;;) {
-  //   printf("ON\n");
-  //   sleep(s);
-  //   printf("OFF\n");
-  //   sleep(s);
-  // }
+  int *s_ptr = (int *)x_void_ptr;
+
+  for(;;) {
+    printf("ON\n");
+    usleep((*s_ptr));
+    printf("OFF\n");
+    usleep((*s_ptr));
+  }
 }
 
 int main(void)
 {
-  int delay = 0;
+  int delay = 500;
 
   pthread_t magic_thread;
   if(pthread_create(&magic_thread, NULL, magic, &delay)) {
