@@ -2,12 +2,11 @@
 
 void turnOn()
 {
-  printf("ON\n");
+  printf("BOM\n");
 }
 
 void turnOff()
 {
-  printf("OFF\n");
 }
 
 int convertToMicroseconds(int bpm)
