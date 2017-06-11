@@ -19,7 +19,7 @@ void bimbambom(int *bpm_ptr)
 {
   int delay = 1000;
 
-  while(true)
+  while(1)
   {
     turnOff();
     usleep(delay);
