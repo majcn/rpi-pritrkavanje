@@ -26,7 +26,7 @@ void bimbambom(int *bpm_ptr)
   while(1)
   {
     turnOff();
-    delay(deplayMiliseconds);
+    delay(delayMiliseconds);
     turnOn();
     delay(convertToMicroseconds(*bpm_ptr) - delayMiliseconds);
   }
