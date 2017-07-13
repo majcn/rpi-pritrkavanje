@@ -28,6 +28,6 @@ void bimbambom(int *bpm_ptr)
     turnOff();
     delay(deplayMiliseconds);
     turnOn();
-    delay(convertToMicroseconds(*bpm_ptr) - delay);
+    delay(convertToMicroseconds(*bpm_ptr) - delayMiliseconds);
   }
 }
