@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS =
-LIBS = -lbluetooth -lpthread
+LIBS = -lwiringPi -lbluetooth -lpthread
 
 default: program
 

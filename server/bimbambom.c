@@ -1,29 +1,33 @@
 #include <stdio.h>  // printf
-#include <unistd.h> // usleep
+#include <wiringPi.h>
 
 void turnOn()
 {
-  printf("BOM\n");
+  digitalWrite(0, HIGH);
 }
 
 void turnOff()
 {
+    digitalWrite(0, LOW);
 }
 
-int convertToMicroseconds(int bpm)
+int convertToMiliseconds(int bpm)
 {
-  return 60000000 / bpm;
+  return 60000 / bpm;
 }
 
 void bimbambom(int *bpm_ptr)
 {
-  int delay = 1000;
+  wiringPiSetup();
+  pinMode(0, OUTPUT);
+
+  int delayMiliseconds = 100;
 
   while(1)
   {
     turnOff();
-    usleep(delay);
+    delay(deplayMiliseconds);
     turnOn();
-    usleep(convertToMicroseconds(*bpm_ptr) - delay);
+    delay(convertToMicroseconds(*bpm_ptr) - delay);
   }
 }
