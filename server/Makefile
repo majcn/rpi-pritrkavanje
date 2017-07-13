@@ -3,7 +3,6 @@ CFLAGS =
 LIBS = -lbluetooth -lpthread
 
 default: program
-.PHONY: program
 
 bimbambom.o: bimbambom.c
 	$(CC) $(CFLAGS) -c bimbambom.c -o bimbambom.o
