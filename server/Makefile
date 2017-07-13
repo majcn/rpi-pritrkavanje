@@ -2,9 +2,8 @@ CC = gcc
 CFLAGS =
 LIBS = -lbluetooth -lpthread
 
-.PHONY: clean default
-
 default: program
+.PHONY: program
 
 bimbambom.o: bimbambom.c
 	$(CC) $(CFLAGS) -c bimbambom.c -o bimbambom.o
