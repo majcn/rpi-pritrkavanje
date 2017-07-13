@@ -2,6 +2,8 @@ CC = gcc
 CFLAGS =
 LIBS = -lbluetooth -lpthread
 
+.PHONY: clean default
+
 default: program
 
 bimbambom.o: bimbambom.c
