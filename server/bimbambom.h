@@ -4,7 +4,7 @@
 struct Song {
   int bpm;
   int notes;
-}
+};
 
 void bimbambom(Song *song);
 
