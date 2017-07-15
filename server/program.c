@@ -16,7 +16,7 @@
 #define QUEUE 1
 
 void *magic(void *x_void_ptr) {
-  bimbambom((Song *)x_void_ptr);
+  bimbambom((struct Song *)x_void_ptr);
 }
 
 int main(void)
