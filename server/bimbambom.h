@@ -6,6 +6,6 @@ struct Song {
   int notes;
 };
 
-void bimbambom(Song *song);
+void bimbambom(struct Song *song);
 
 #endif // BIMBAMBOM_H_

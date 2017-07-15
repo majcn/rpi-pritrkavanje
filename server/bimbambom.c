@@ -18,7 +18,7 @@ int convertToMiliseconds(int bpm)
   return 60000 / bpm;
 }
 
-void bimbambom(Song *song)
+void bimbambom(struct Song *song)
 {
   wiringPiSetup();
   pinMode(0, OUTPUT);
