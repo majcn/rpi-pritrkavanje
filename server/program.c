@@ -16,15 +16,16 @@
 #define QUEUE 1
 
 void *magic(void *x_void_ptr) {
-  bimbambom((int *)x_void_ptr);
+  bimbambom((Song *)x_void_ptr);
 }
 
 int main(void)
 {
-  int bpm = 100;
+  struct Song song;
+  song.bpm = 100;
 
   pthread_t magic_thread;
-  if(pthread_create(&magic_thread, NULL, magic, &bpm)) {
+  if(pthread_create(&magic_thread, NULL, magic, &song)) {
       perror("thread");
       exit(1);
   }
@@ -60,7 +61,7 @@ int main(void)
       while((bytes_read = read(client, buf, sizeof(buf))) > 0) {
         printf("%i", bytes_read);
         printf("received [%s]\n", buf);
-        sscanf(buf, "%d", &bpm);
+        song.bpm = atoi(buf);
       }
       close(client);
     }
